@@ -1,0 +1,152 @@
+{
+    "Rooms": [
+        {
+            "id": 201,
+            "available": true,
+            "prices": {
+                "week": {
+                    "littleWhile": 35000,
+                    "dawn": 50000
+                },
+                "weekend": {
+                    "littleWhile": 40000,
+                    "dawn": 60000
+                }
+            },
+            "thematic": "none"
+        },
+        {
+            "id": 232,
+            "available": false,
+            "prices": {
+                "week": {
+                    "littleWhile": 35000,
+                    "dawn": 50000
+                },
+                "weekend": {
+                    "littleWhile": 40000,
+                    "dawn": 60000
+                }
+            },
+            "thematic": "none"
+        },
+        {
+            "id": 433,
+            "available": true,
+            "prices": {
+                "week": {
+                    "littleWhile": 35000,
+                    "dawn": 50000
+                },
+                "weekend": {
+                    "littleWhile": 40000,
+                    "dawn": 60000
+                }
+            },
+            "thematic": "none"
+        },
+        {
+            "id": 432,
+            "available": false,
+            "prices": {
+                "week": {
+                    "littleWhile": 35000,
+                    "dawn": 50000
+                },
+                "weekend": {
+                    "littleWhile": 40000,
+                    "dawn": 60000
+                }
+            },
+            "thematic": "none"
+        },
+        {
+            "id": 344,
+            "available": false,
+            "prices": {
+                "week": {
+                    "littleWhile": 35000,
+                    "dawn": 50000
+                },
+                "weekend": {
+                    "littleWhile": 40000,
+                    "dawn": 60000
+                }
+            },
+            "thematic": "narnia"
+        },
+        {
+            "id": 544,
+            "available": true,
+            "prices": {
+                "week": {
+                    "littleWhile": 35000,
+                    "dawn": 50000
+                },
+                "weekend": {
+                    "littleWhile": 40000,
+                    "dawn": 60000
+                }
+            },
+            "thematic": "egipto"
+        }
+    ],
+    "Services": [
+        {
+            "id": "011220201000",
+            "date": "1/12/2020",
+            "hour": "10:00:00",
+            "room": 201,
+            "price": 30000,
+            "detail": "bla bla bla bla"
+        },
+        {
+            "id": "021220201100",
+            "date": "2/12/2020",
+            "hour": "11:00:00",
+            "room": 232,
+            "price": 30000,
+            "detail": "3 personas"
+        },
+        {
+            "id": "031220200800",
+            "date": "3/12/2020",
+            "hour": "08:00:00",
+            "room": 433,
+            "price": 30000,
+            "detail": ""
+        },
+        {
+            "id": "061220200800",
+            "date": "6/12/2020",
+            "hour": "8:00:00",
+            "room": 432,
+            "price": 30000,
+            "detail": "bla bla bla bla"
+        },
+        {
+            "id": "081220201200",
+            "date": "8/12/2020",
+            "hour": "12:00:00",
+            "room": 432,
+            "price": 30000,
+            "detail": ""
+        },
+        {
+            "id": "111220201100",
+            "date": "11/12/2020",
+            "hour": "11:00:00",
+            "room": 344,
+            "price": 45000,
+            "detail": "bla bla bla bla"
+        },
+        {
+            "id": "111220200100",
+            "date": "11/12/2020",
+            "hour": "1:00:00",
+            "room": 544,
+            "price": 45000,
+            "detail": "bla bla bla bla"
+        }
+    ]
+}
