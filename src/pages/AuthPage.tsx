@@ -56,6 +56,7 @@ const AuthPage: FC = () => {
     }
   };
 
+
   const handleLogin = () => {
     setShowLoading(true);
     if (!username) {

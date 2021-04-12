@@ -5,8 +5,8 @@ import ServicesPage from "../pages/ServicesPage";
 import ProductsPage from "../pages/ProductsPage";
 import OptionsPage from "../pages/OptionsPage";
 import HistoryBarPage from "../pages/HistoryBarPage";
-import CreateProductPage from '../pages/CreateProducPage'
-import TotalitiesPage from '../pages/TotalitiesPage'
+import CreateProductPage from "../pages/CreateProducPage";
+import TotalitiesPage from "../pages/TotalitiesPage";
 import Tab3 from "../pages/Tab3";
 
 const routes: any = [

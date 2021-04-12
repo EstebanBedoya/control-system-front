@@ -1,12 +1,13 @@
 // https://el-cielo-api.herokuapp.com
 // http://localhost:3001
+// http://3.133.118.72:3001 // aws free server
 
 //ionic build
 // npx cap add android || npx cap update andorid
-// npx cap open andorid
+// npx cap open andorid  
 
 export default {
-    BASE_URL: 'http://localhost:3001',
+    BASE_URL: 'http://3.133.118.72:3001',
 
     LOGIN: '/api/auth/login',
     WebSocket: '/socket.io/socket.io.js'

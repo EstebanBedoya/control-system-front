@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from "react";
 
 // ion components
-import { IonFab, IonFabButton, IonIcon, IonList } from "@ionic/react";
+import {
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonList,
+  IonInput,
+  IonGrid,
+  IonCol,
+  IonRow,
+} from "@ionic/react";
 import { pencilOutline, checkmarkOutline } from "ionicons/icons";
 
 // custom components
@@ -65,6 +74,7 @@ const RenderItem = (
 const ProductsPage: React.FC = () => {
   const products = useSelector((state: any) => state.bar);
   const [isChangeStock, setIsChangeStock] = useState(false);
+  const [searchProduct, setSearchProduct] = useState<string>("");
   const dispatch = useDispatch();
 
   const [segment, setSegment] = useState<string>("withStock");
@@ -82,10 +92,9 @@ const ProductsPage: React.FC = () => {
     }
 
     socket.on("products server", () => {
-      
-      if (products.length === 0){
-        debounce((t: string) => dispatch(getProdcutsAction(t)), 1000)(token)
-      }  
+      if (products.length === 0) {
+        debounce((t: string) => dispatch(getProdcutsAction(t)), 1000)(token);
+      }
     });
   }, []);
 
@@ -106,14 +115,43 @@ const ProductsPage: React.FC = () => {
     setIsChangeStock(isChangeStock ? false : true);
   };
 
+  const productsList = () => {
+    const productsBySearch = products.filter(({ name }: any) =>
+      name.toLocaleLowerCase().includes(searchProduct)
+    );
+    const productsBySegment = filterProduct(segment, products);
+
+    if (searchProduct) return productsBySearch;
+    else return productsBySegment;
+  };
+
   return (
     <StandardPage title="Productos">
-      <Segments handleChange={changeSegment} segments={segments} />
-      <IonList>
-        {filterProduct(segment, products).map((item: product, index: number) =>
-          RenderItem(item, index, handleSave, isChangeStock, token)
-        )}
-      </IonList>
+      <IonGrid>
+        <IonRow>
+          <IonCol>
+            <Segments handleChange={changeSegment} segments={segments} />
+          </IonCol>
+        </IonRow>
+        <IonRow>
+          <IonCol>
+            <IonInput
+              value={searchProduct}
+              placeholder="Buscar producto"
+              onIonChange={(e) => setSearchProduct(e.detail.value!)}
+            />
+          </IonCol>
+        </IonRow>
+        <IonRow>
+          <IonCol>
+            <IonList>
+              {productsList().map((item: product, index: number) =>
+                RenderItem(item, index, handleSave, isChangeStock, token)
+              )}
+            </IonList>
+          </IonCol>
+        </IonRow>
+      </IonGrid>
 
       {role === "admin" && (
         <IonFab vertical="bottom" horizontal="end" slot="fixed">
